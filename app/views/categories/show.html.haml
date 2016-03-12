@@ -1,0 +1,10 @@
+- page_header @category.name
+
+.post
+  - @category.classifieds.each do |classified|
+    %h4= link_to classified.title, classified
+    %p= number_to_currency(classified.price)
+    %strong= distance_of_time_in_words(classified.updated_at, Time.now)
+    %p= truncate classified.description, length: 100
+
+= link_to 'Back', categories_path

@@ -1,0 +1,16 @@
+.modal.fade#nav-modal
+  .modal-dialog
+    .model-content
+      .modal-header
+        %button{ type: "button", class: "close", aria: {label: "Close"}, data: {dismiss: "modal"}}
+          %span{aria: {hidden: true}} &times;
+      .modal-body
+        .row
+          .col-lg-12
+            - if user_signed_in?
+              %div= link_to '+ Add Content', new_classified_path
+              %div= link_to 'Logout', sign_out_path, method: :delete
+              %div= link_to 'Profile', user_path(current_user)
+            %div= link_to 'About', ''
+            %div= link_to 'Contact', ''
+              

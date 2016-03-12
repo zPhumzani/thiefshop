@@ -1,0 +1,27 @@
+= render 'layouts/navigation'
+
+.rows.text-center
+  .row
+    .col-lg-6
+      %h1 ThiefShop
+    .col-lg-6
+      %ul.list-inline
+        %li.desktop-only= link_to 'Main Page', classifieds_path
+        %li.desktop-only= link_to 'Categories', categories_path
+        %li.desktop-only= link_to 'Favorites', ''
+        %li
+          %a{ href: '#', data: {toggle: 'modal', target: '#nav-modal'}}
+            %i.fa.fa-bars
+        %li= link_to 'Admin Control', admin_root_path
+
+.container
+  .header
+    .header-search
+      .row
+        .col-lg-12
+          .well
+            = form_tag search_path do 
+              .input-group
+                = text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Search'
+                %span.input-group-btn
+                  = submit_tag 'Go!', class: 'btn btn-primary'

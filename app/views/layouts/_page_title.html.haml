@@ -1,0 +1,9 @@
+.page-title
+  .row
+    .col-lg-6
+      %h1= yield(:page_header)
+    .col-lg-6.add-content
+      %ul.list-inline.pull-right
+        %li 
+          - if user_signed_in?
+            %li= link_to fa_icon('plus') + "Add new ad", new_classified_path, class: 'btn btn-default'

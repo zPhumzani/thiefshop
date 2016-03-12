@@ -1,0 +1,4 @@
+%a{ href: category_path(category)}
+  %li.list-group-item 
+    = category.name
+    %span.badge= "#{category.classifieds.count}"

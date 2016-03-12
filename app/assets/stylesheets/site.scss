@@ -1,0 +1,280 @@
+.navbar {
+background: $inverse-background;
+margin-bottom: $margin;
+}
+
+.navbar-default .navbar-brand {
+   font-family: $heading-copy;
+   font-weight: 400;
+   font-size: ($font-size * 2);
+   height: 72px;
+   line-height: 72px;
+   padding: 0;
+   color: #fff;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:hover span {
+   color: $blue1;
+}
+.navbar-default .navbar-brand span {
+   color: $blue1;
+   font-weight: 300;
+}
+
+.navbar-default {
+  border: 0;
+  border-bottom: $border-size $border-type $border-color;
+  margin: 0;
+  margin-bottom: ($margin * 2);
+  line-height: 72px;
+
+  ul.nav.navbar-nav {
+    padding: $padding 0;
+    li {
+      a {
+        color: white;
+      }
+      &:hover {
+        background: $blue1;
+        color: $bw-primary;
+      }
+      &:active {
+        color: $bw-primary;
+      }
+    }
+  }
+}
+
+.navbar-collapse {
+padding-left: 0;
+padding-right: 0;
+}
+
+.container {
+	padding: 0 100px;
+
+	.header {
+	  margin-top: ($margin * 2);
+
+
+	  a {
+	    color: $bw-black;
+	    font-weight: bold;
+
+	    &:hover {
+	      color: $bw-grey;
+	    }
+	  }
+	  .header-nav {
+	    margin-bottom: ($margin * 2);
+	    background: $inverse-background;
+
+
+	    ul {
+	      margin-bottom: 0;
+
+	      li {
+	        margin-right: ($margin * 1.25);
+	      }
+	    }
+	  }
+
+	  .header-search {
+	    margin-top: 50px;
+	    .btn {
+	      text-transform: uppercase;
+	    }
+
+	    .btn-primary {
+	      background: $bw-primary;
+	      border-color: $bw-primary;
+	      color: $white;
+
+	      &:hover {
+	        background: $bw-dark-primary;
+	        border-color: $bw-dark-primary;
+	      }
+	    }
+	    .well {
+	      border: 0;
+	      box-shadow: none;
+	      background-color: $secondary-background;
+	    }
+	  }
+	}
+}
+
+.modal-dialog {
+margin: 0;
+width: auto;
+}
+.modal-backdrop {
+background: $white;
+opacity: 0.9!important;
+}
+.modal-content {
+background: none;
+box-shadow: none;
+border: 0;
+text-align: center;
+-moz-border-radius: 0px;
+border-radius: 0px;
+}
+.modal-header {
+border-bottom: 0;
+}
+.close {
+color: $bw-black;
+text-shadow: none;
+opacity: 1;
+}
+.modal a {
+color: $bw-black;
+text-decoration: none;
+font-weight: 700;
+font-size: ($font-size * 4);
+}
+.modal a:hover {
+color: $bw-primary;
+}
+
+.footer-languages {
+	background: $inverse-background;
+	color: $bw-black;
+	padding: ($padding * 2) 0;
+
+	ul {
+	  margin-bottom: 0;
+
+	  a {
+	    color: $white;
+
+	    &:hover {
+	      color: $bw-black;
+	    }
+	  }
+	}
+}
+
+.footer {
+	color: $bw-light-grey;
+	margin: ($margin * 2) 0;
+
+	a {
+	  color: $bw-light-grey;
+
+	  &:hover {
+	    color: $bw-grey;
+	  }
+	}
+}
+
+.page-title {
+	border-bottom: ($border-size * 5) $border-type $border-color;
+	padding-bottom: $padding;
+
+	.add-content {
+	  line-height: 36px;
+	}
+}
+h1 {
+	margin: 0;
+	color: $bw-primary;
+	font-weight: 300px;
+}
+
+h5 {
+	color: $bw-grey;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+small {
+	color: $bw-light-grey;
+}
+
+.sidebar {
+background: $secondary-background;
+padding: $padding;
+margin-bottom: ($margin * 2);
+}
+
+.feed {
+	padding: $padding;
+
+	.post {
+	  margin-top: ($margin * 2);
+	  border-bottom: $border-size $border-type $border-color;
+	  padding-bottom: ($padding * 1.5); 
+
+	  &:first-child {
+	    margin-top: 0;
+	  }
+
+	  i {
+	    color: $light-grey;
+	  }
+
+	  i.favorite {
+	    color: $red1;
+	  }
+	}
+}
+
+.feed-pagination {
+	margin-top: ($margin * 2);
+	padding-bottom: ($padding * 2);
+	text-align: right;
+}
+
+.social-media {
+	margin-top: ($margin * 2);
+	padding-bottom: ($padding * 1.5);
+
+	i {
+	  font-size: ($font-size * 2);
+	}
+}
+
+@media (max-width: 768px) {
+	.container {
+	  padding-right: $padding;
+	  padding-left: $padding;
+	}
+
+	.add-content {
+	  float: left;
+	  margin-top: $margin;
+	}
+
+	li.desktop-only {
+	display: none;
+	}
+
+	.modal a {
+	  font-size: ($font-size * 2);
+	}
+}
+
+
+.list-group {
+    a {
+      &:hover {
+        background: $blue1;
+      }
+    }
+	.list-group-item {
+	  border: none;
+	  border-bottom: 1px solid $secondary-background;
+
+      &:hover {
+        background: $blue1;
+        color: #fff;
+      }
+	}
+}
+.css1 { font-size: 1.0em;}
+.css2 { font-size: 1.2em;}
+.css3 { font-size: 1.4em;}
+.css4 { font-size: 1.6em;}

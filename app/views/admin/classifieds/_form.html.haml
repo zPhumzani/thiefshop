@@ -1,0 +1,13 @@
+= simple_form_for(@admin_classified) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.input :price
+    = f.input :location
+    = f.input :description
+    = f.association :category
+    = f.input :slug
+
+  .form-actions
+    = f.button :submit

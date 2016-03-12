@@ -1,0 +1,27 @@
+!!!
+%html
+  %head
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    %title= content_for?(:title) ? yield(:title) : 'Thief Shop'
+    %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Thief Shop'}"}
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body#rails-list
+    #container
+      #header
+        %h1 ThiefShop
+        %h3 Classifieds powered by Ruby on Rails
+      #content.col-md-8
+        = yield
+      #sidebar.col-md-4
+        - if user_signed_in?
+          %p 
+            %p= "welcome #{current_user.login}!"
+            %p= link_to "View My Profiel", current_user
+            = link_to 'Logout', sign_out_path, method: :delete
+        - else
+          = render "sessions/form"
+        %aside
+          %h3 Categories
+          = cloud(Category.all)

@@ -1,0 +1,45 @@
+
+- page_header @classified.title
+- title @classified.title
+- description(truncate(@classified.description, length: 120))
+
+.post-meta
+  %p
+    %small 
+      23
+      %i.fa.fa-heart.favorite
+      Last edited: 
+      = distance_of_time_in_words(@classified.updated_at, Time.now)
+  %p
+    %b Price:
+    = number_to_currency(@classified.price)
+  %p
+    %b Category:
+    = link_to @classified.category.name, category_path(@classified.category)
+  %p
+    %b Location:
+    = @classified.location
+  %p
+    %b Date Posted:
+    = @classified.created_at.strftime("%B %d %Y")
+  %p
+    %b Posted by:
+    = link_to @classified.user, @classified.user
+.post
+  %h3
+    %i.fa.fa-heart
+    = link_to @classified.title, ''
+  %p= @classified.description
+
+%p.thumbnail
+  - unless @classified.file_contents.blank?
+    = image_tag(image_classified_path(@classified), class: 'img-responsive')
+    
+<hr />
+%p
+  Interested? Contact
+  = mail_to @classified.user.email
+
+= link_to 'Edit', edit_classified_path(@classified)
+\|
+= link_to 'Back', classifieds_path

@@ -1,0 +1,7 @@
+%li.desktop-only= link_to 'Main Page', classifieds_path
+%li.desktop-only= link_to 'Categories', categories_path
+%li.desktop-only= link_to 'Favorites', ''
+%li
+  %a{ href: '#', data: {toggle: 'modal', target: '#nav-modal'}}
+    %i.fa.fa-bars
+%li= link_to 'Admin Control', admin_root_path

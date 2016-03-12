@@ -1,0 +1,8 @@
+.post
+  %h3
+    %i.fa.fa-heart
+    = link_to classified.title, classified
+  %p= truncate classified.description, length: 120
+  - if can_edit?(classified)
+    %small= link_to 'Edit', edit_classified_path(classified) 
+    %small= link_to 'Delete', classified, method: :delete, data: {confirm: "Are you sure you want to delete your ad?"}

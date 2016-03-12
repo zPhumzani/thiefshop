@@ -1,0 +1,27 @@
+.page-title
+  .row
+    .col-lg-6
+      %h1 Page Title
+    .col-lg-6.add-content
+      %ul.list-inline.pull-right
+        %li 
+          %button{type: "button", class: 'btn btn-primary'} + Edit
+
+.page-content
+  .row
+    .col-lg-8
+      .feed
+        .post-meta
+          %p
+            %small 
+              23
+              %i.fa.fa-heart.favorite
+              Last edited: January 1, 2015 by
+              = link_to 'John Smith', '#'
+        .post
+          %h3
+            %i.fa.fa-heart
+            = link_to 'Page name goes here', ''
+          %p 
+            Lorem ipsum dolor sit amet, consectetur adipiscing lit. Proin feugiat sit amet sapien nec tristique. Morbi vitae odio mi. Praesent vitae diam ac libero tristique viverra. 
+            %a{href: "#"} More

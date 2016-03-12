@@ -1,0 +1,30 @@
+- page_header "Listing classifieds"
+
+%table.table
+  %thead
+    %tr
+      %th Title
+      %th Price
+      %th Location
+      %th Description
+      %th Category
+      %th user
+      %th
+      %th
+
+  %tbody
+    - @admin_classifieds.each do |admin_classified|
+      %tr
+        %td= admin_classified.title
+        %td= admin_classified.price
+        %td= admin_classified.location
+        %td= truncate admin_classified.description
+        %td= admin_classified.category
+        %td= admin_classified.user
+        %td= link_to 'Show', admin_classified
+        %td= link_to 'Edit', edit_admin_classified_path(admin_classified)
+        %td= link_to 'Destroy', admin_classified, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Classified', new_admin_classified_path

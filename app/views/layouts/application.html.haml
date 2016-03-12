@@ -1,0 +1,27 @@
+!!!
+%html
+  %head
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    %title= content_for?(:title) ? yield(:title) : 'Thief Shop'
+    %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Thief Shop'}"}
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %header
+      = render 'layouts/header'
+      = render 'layouts/nav_modal'
+    %main.container{:role => "main"}
+      = render 'layouts/messages'
+      = render 'layouts/page_title'
+      .page-content
+        .row
+          .col-lg-8
+            .feed
+              = yield
+          .col-lg-4
+            = render 'layouts/sidebar'
+    = render 'layouts/footer'
+    = render 'layouts/nav_modal'
+
+

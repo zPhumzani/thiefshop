@@ -1,0 +1,38 @@
+.page-title
+  .row
+    .col-lg-6
+      %h1 Featured Pages
+    .col-lg-6.add-content
+      %ul.list-inline.pull-right
+        %li 
+          %button{type: "button", class: 'btn btn-primary'} + Add Content
+
+.page-content
+  .row
+    .col-lg-8
+      .feed
+        .post
+          %h3
+            %i.fa.fa-heart
+            = link_to 'Page name goes here', ''
+          %p 
+            Lorem ipsum dolor sit amet, consectetur adipiscing lit. Proin feugiat sit amet sapien nec tristique. Morbi vitae odio mi. Praesent vitae diam ac libero tristique viverra. 
+            %a{href: "#"} More
+        .post
+          %h3
+            %i.fa.fa-heart.favorite
+            = link_to 'Page name goes here', ''
+          %p 
+            Lorem ipsum dolor sit amet, consectetur adipiscing lit. Proin feugiat sit amet sapien nec tristique. Morbi vitae odio mi. Praesent vitae diam ac libero tristique viverra. 
+            %a{href: "#"} More
+        .post
+          %h3
+            %i.fa.fa-heart.hated
+            = link_to 'Page name goes here', ''
+          %p 
+            Lorem ipsum dolor sit amet, consectetur adipiscing lit. Proin feugiat sit amet sapien nec tristique. Morbi vitae odio mi. Praesent vitae diam ac libero tristique viverra. 
+            %a{href: "#"} More
+      .feed-pagination
+        %button.btn.btn-primary{ type: 'button'} Next Page
+    .col-lg-4
+      = render 'layouts/sidebar'

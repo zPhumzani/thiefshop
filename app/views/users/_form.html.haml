@@ -1,0 +1,13 @@
+= simple_form_for(@user) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :slug, label: "Desired Login"
+    = f.input :first_name
+    = f.input :last_name
+    = f.input :password
+    = f.input :password_confirmation, label: "Confirm Password"
+    = f.input :email, label: "Your Email"
+
+  .form-actions
+    = f.button :submit, "Create my account"

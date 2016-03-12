@@ -1,0 +1,13 @@
+= form_for(:user, url: session_path) do |f|
+  .form-group
+    = f.label :slug, "You Username"
+    = f.text_field :slug, class: "form-control", placeholder: "Enter your username or email"
+  .form-group
+    = f.label :password
+    = f.password_field :password, class: 'form-control', placeholder: "Enter your password"
+  .form-actions
+    = f.submit 'Sign In', class: 'btn btn-primary'
+
+Need an account? 
+= link_to 'Signup today!', new_user_path 
+  

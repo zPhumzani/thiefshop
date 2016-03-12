@@ -1,0 +1,5 @@
+- page_header "Search Results"
+- if @classifieds.blank?
+  %p There is no record with that name
+- else
+  = render @classifieds

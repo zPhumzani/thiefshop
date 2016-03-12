@@ -1,0 +1,28 @@
+- page_header @page_header || "classifieds"
+
+- if @classifieds.blank? 
+  %p There are not any ads currently in the system.
+- else
+  %p Thes are the current classified ads in our system
+
+%ul#classifields
+  - previous_days = ""
+  - @classifieds.each do |classified|
+    - if (classified.created_at.strftime("%m/%d/%Y").to_s != previous_days)
+      %h4= classified.created_at.strftime("%B %d, %Y")
+
+    .post
+      %h3
+        %i.fa.fa-heart
+        = link_to classified.title, classified
+      %p= truncate classified.description, length: 120
+      %p
+        %small= classified.created_at.strftime("%B %d, %Y")
+      %p=raw tag_links(classified.all_tags)
+      - if can_edit?(classified)
+        %small= link_to 'Edit', edit_classified_path(classified)
+        %small= link_to 'Delete', classified, methed: :delete, data: {confirm: "Are you sure?"}
+      - previous_days = classified.created_at.strftime("%m/%d/%Y").to_s
+
+.feed-pagination
+  = will_paginate @classifieds

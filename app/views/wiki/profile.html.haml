@@ -1,0 +1,46 @@
+.page-title
+  .row
+    .col-lg-6
+      %h1 
+        = image_tag('logo.gif', width: 36, height: 36, alt: 'Avatar')
+        John Smith
+    .col-lg-6.add-content
+      %ul.list-inline.pull-right
+        %li 
+          %button{type: "button", class: 'btn btn-primary'} + Edit
+
+.page-content
+  .row
+    .col-lg-8
+      .feed
+        .post
+          %h3 Bio
+          %p 
+            Lorem ipsum dolor sit amet, consectetur adipiscing lit. Proin feugiat sit amet sapien nec tristique. Morbi vitae odio mi. Praesent vitae diam ac libero tristique viverra. 
+          %p= link_to '23 Ads', ''
+          %p
+            %small Profile page has been viewed 1242,44 times
+
+        .post
+          %h3 Favorite Pages
+          %p
+            %small John Smith has favorited 11 pages
+            %ul.list-unstyled
+              %li= link_to 'Favorited 11 page', ''
+              %li= link_to 'Favorited 11 page', ''
+              %li= link_to 'Favorited 11 page', ''
+              %li= link_to 'Favorited 11 page', ''
+              %li= link_to 'Favorited 11 page', ''
+              %li= link_to 'Favorited 11 page', ''
+
+        .social-media
+          %h3 Social Media
+          %ul.list-inline
+            %li= link_to fa_icon('facebook-official'), ''
+            %li= link_to fa_icon('twitter-square'), ''
+            %li= link_to fa_icon('github-square'), ''
+            %li= link_to fa_icon('google-plus-square'), ''
+            %li= link_to fa_icon('pinterest-square'), ''
+
+    .col-lg-4
+      = render 'layouts/sidebar'

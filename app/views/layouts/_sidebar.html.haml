@@ -1,0 +1,18 @@
+.sidebar
+  - if user_signed_in?
+    %h5
+      = "Welcome "
+      = link_to current_user, user_path(current_user)
+    %p= link_to "View My Profiel", current_user
+    = link_to 'Logout', sign_out_path, method: :delete
+  - else
+    = render "sessions/form"
+  %h5 Categories
+  %ul.list-unstyled
+    - Category.alpha.all.each do |category| 
+      %li= link_to category, category
+
+  .tags-cloud
+    %h5 Tags Cloud
+    - tags_cloud Tag.counts, %w{css1 css2 css3 css4} do |tag, css_class|
+      = link_to tag.name, tag_path(tag.name), class: css_class
